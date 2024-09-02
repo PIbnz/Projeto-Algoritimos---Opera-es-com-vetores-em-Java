@@ -1,8 +1,25 @@
+/*
+Entrega a Atividade 1 - Algoritmos e Programação II
+
+Nós,
+
+Pedro Ibanez Carvalho 
+Lucas de Lima Benicio
+Tadeu Henrique Alves dos Santos
+
+declaramos que
+
+todas as respostas são fruto de nosso próprio trabalho,
+não copiamos respostas de colegas externos à equipe,
+não disponibilizamos nossas respostas para colegas externos ao grupo e
+não realizamos quaisquer outras atividades desonestas para nos beneficiar ou prejudicar outros.
+*/
+
 import java.util.Random;
 import java.util.Scanner;
 
 public class Projeto_Alg2_Vet {
-    public static Scanner miau = new Scanner(System.in);
+    public static Scanner leitor = new Scanner(System.in);
     public static void main(String[] args) {
         
         menu();
@@ -25,7 +42,7 @@ public class Projeto_Alg2_Vet {
     public static void receberComando(){
         int comando;
         do{
-        comando = miau.nextInt();
+        comando = leitor.nextInt();
         if(comando<0 || comando>10){
             System.out.println("Comando invalido, tente novamente");
         }
