@@ -18,7 +18,7 @@ não realizamos quaisquer outras atividades desonestas para nos beneficiar ou pr
 import java.util.Random;
 import java.util.Scanner;
 
-public class App {
+public class Projeto {
     public static Scanner leitor = new Scanner(System.in);
     public static void main(String[] args) {
 
@@ -46,7 +46,7 @@ public class App {
                     function1(null);
                     break;
                 case 2:
-                    function2();
+                    function2(null);
                     break;
                 case 3:
                     
@@ -90,16 +90,26 @@ public class App {
     
         for(int i = 0; i < n.length; i++){
     
-            n[i] = r.nextInt(100);
+            n[i] = r.nextInt(1000);
     
         }
         return n;
         }
 
        
-       public static void function2(){
+       public static void function2(int[]vetor){
 
-        
+        for(int i = 0; i < vetor.length; i++){
+
+            System.out.println(vetor[i]);
+
+        }
 
        } 
+
+       public static void function3(){
+
+
+        
+       }
 }
