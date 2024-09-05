@@ -18,7 +18,7 @@ não realizamos quaisquer outras atividades desonestas para nos beneficiar ou pr
 import java.util.Random;
 import java.util.Scanner;
 
-public class Projeto {
+public class Projeto_Alg2_Vet {
     public static Scanner leitor = new Scanner(System.in);
     public static void main(String[] args) {
 
