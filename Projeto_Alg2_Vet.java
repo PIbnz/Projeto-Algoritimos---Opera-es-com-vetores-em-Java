@@ -18,13 +18,14 @@ não realizamos quaisquer outras atividades desonestas para nos beneficiar ou pr
 import java.util.Random;
 import java.util.Scanner;
 
-public class Projeto_Alg2_Vet {
+public class App {
     public static Scanner leitor = new Scanner(System.in);
     public static void main(String[] args) {
-        
-        menu();
-    }
-    public static void menu(){
+
+        int comando;
+
+        do{
+
         System.out.printf("Escolha uma opção:\n" +
         "1. Inicializar o vetor com números aleatórios\n" +
         "2. Imprimir o vetor\n" +
@@ -36,58 +37,52 @@ public class Projeto_Alg2_Vet {
         "8. Verificar se dois números somam um valor específico\n" +
         "9. Voltar\n" +
         "10. Sair\n");
-        receberComando();
+
+        
+            comando = leitor.nextInt();
+
+            switch (comando) {
+                case 1:
+                    function1(null);
+                    break;
+                case 2:
+                    function2();
+                    break;
+                case 3:
+                    
+                    break;
+                case 4:
+                    
+                    break;
+                case 5:
+    
+                    break;
+                case 6:
+    
+                    break;
+                case 7:
+    
+                    break;
+                case 8:
+    
+                    break;
+                case 9:
+    
+                    break;
+                case 10:
+    
+                    break;
+                default:
+                    System.out.println("Erro, voltando para o menu");
+                    
+                    break;
+            }
+            
+         }while(comando!=10);
     }
+    
 
-    public static void receberComando(){
-        int comando;
-        do{
-        comando = leitor.nextInt();
-        if(comando<0 || comando>10){
-            System.out.println("Comando invalido, tente novamente");
-        }
-        }while(comando<0 || comando>10);
-        determinarFunção(comando);
-    }
 
-    public static void determinarFunção(int comando){
-        switch (comando) {
-            case 1:
-                function1(null);
-                break;
-            case 2:
-                
-                break;
-            case 3:
-                
-                break;
-            case 4:
-                
-                break;
-            case 5:
-
-                break;
-            case 6:
-
-                break;
-            case 7:
-
-                break;
-            case 8:
-
-                break;
-            case 9:
-
-                break;
-            case 10:
-
-                break;
-            default:
-                System.out.println("Erro, voltando para o menu");
-                menu();
-                break;
-        }
-    }
 
     public static int[] function1 (int[] n ){
 
@@ -101,4 +96,10 @@ public class Projeto_Alg2_Vet {
         return n;
         }
 
+       
+       public static void function2(){
+
+        
+
+       } 
 }
