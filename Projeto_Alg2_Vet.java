@@ -19,10 +19,14 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Projeto_Alg2_Vet {
-    public static Scanner leitor = new Scanner(System.in);
     public static void main(String[] args) {
-        int[] vetor = new int[1000];
-        int comando;
+        Random random = new Random();
+        Scanner leitor = new Scanner(System.in);
+        
+        int comando = 0;
+        int voltas = 0;
+        int n = 0;
+        int m = 0;
 
         do{
 
@@ -39,14 +43,65 @@ public class Projeto_Alg2_Vet {
         "8. Verificar se dois números somam um valor específico\n" +
         "0. Sair\n");
 
-        
-            comando = leitor.nextInt();
+            if(voltas == 0){
+            do {
+                System.out.println("Por favor escolha a primeira função para assim poder utilizar as proximas");
+                comando = leitor.nextInt();
+            }while (comando!=1);
+            }else{
+                comando = leitor.nextInt();
+            }
+
+            
+            if(comando == 1 && voltas == 0){
+
+                System.out.println("Qual tamanho deseja para no seu vetor ?");
+
+                do{
+
+                n = leitor.nextInt();
+
+                if(n<0){
+                    System.out.println("Porfavor, tome cuidado, não é possivel criar vetores negativos. Tente colocar um numero positivo");
+                }
+
+                if(n>1000){
+                    System.out.println("Ops, este programa tem como limite maximo do vetor 1000, escolha um numero menor.");
+                }
+
+                }while(n<0 || n>1000);
+
+                System.out.println("Qual o maior numero desse vetor?");
+
+                do{
+
+                m = leitor.nextInt();
+
+                if(m<0){
+                    System.out.println("O numero maximo tem que ser um numero inteiro positivo");
+                }
+
+                }while (m<0);
+                    
+                voltas++;
+            }
+
+            int[] vetor = new int[n];
+
+            for(int i = 0; i < vetor.length; i++){
+    
+            vetor[i] = random.nextInt(m);
+
+            }
 
             switch (comando) {
                 case 1:
-                    function1(vetor);
-                    break;
+                if(voltas>0){
+                    System.out.println("Você ja inicializou o vetor, tente fazzer alguma operação.");
+                }
+                break;
                 case 2:
+                    System.out.println("Imprimindo vetor ...");
                     function2(vetor);
                     break;
                 case 3:
@@ -78,33 +133,21 @@ public class Projeto_Alg2_Vet {
                     
                     break;
             }
-            
          }while(comando!=0);
+
+         leitor.close();
     }
     
-
-
-
-    public static void function1 (int[] vetor ){
-
-        Random random = new Random();
-    
-        for(int i = 0; i < vetor.length; i++){
-    
-            vetor[i] = random.nextInt(1000);
-    
-         }
-        }
 
        
        public static void function2(int[]vetor){
 
         for(int i = 0; i < vetor.length; i++){
-
-            System.out.println(vetor[i]);
+            System.out.println();
+            System.out.print(vetor[i] + " ");
 
         }
-
+        System.out.println();
        } 
 
        public static void function3(){
