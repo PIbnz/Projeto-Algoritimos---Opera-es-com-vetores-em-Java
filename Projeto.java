@@ -18,18 +18,15 @@ não realizamos quaisquer outras atividades desonestas para nos beneficiar ou pr
 import java.util.Random;
 import java.util.Scanner;
 
-public class Main {
+public class Projeto {
     public static void main(String[] args) {
         Random random = new Random();
         Scanner leitor = new Scanner(System.in);
 
         int comando = 0;
-        int voltas = 0;
         int n = 0;
         int m = 0;
         
-
-        do{
 
         System.out.printf(
         "Bem vindo ao sistema de operação com vetores\n"+
@@ -44,17 +41,11 @@ public class Main {
         "8. Verificar se dois números somam um valor específico\n" +
         "0. Sair\n");
 
-            if(voltas == 0){
+            
             do {
                 System.out.println("Por favor escolha a primeira função para assim poder utilizar as proximas");
                 comando = leitor.nextInt();
             }while (comando!=1);
-            }else{
-                comando = leitor.nextInt();
-            }
-
-
-            if(comando == 1 && voltas == 0){
 
                 System.out.println("Qual tamanho deseja para no seu vetor ?");
 
@@ -84,22 +75,32 @@ public class Main {
 
                 }while (m<0);
 
-                voltas++;
-            }
-
             int[] vetor = new int[n];
-
             for(int i = 0; i < vetor.length; i++){
 
             vetor[i] = random.nextInt(m);
-
             }
+
+            do{
+
+                System.out.printf(
+        "Bem vindo ao sistema de operação com vetores\n"+
+        "Escolha uma opção:\n" +
+        "1. Inicializar o vetor com números aleatórios\n" +
+        "2. Imprimir o vetor\n" +
+        "3. Verificar se um determinado número está contido no vetor\n" +
+        "4. Buscar o maior número armazenado no vetor\n" +
+        "5. Calcular a média dos números pares armazenados no vetor\n" +
+        "6. Calcular o percentual dos números ímpares armazenados no vetor\n" +
+        "7. Calcular a média centralizada dos números armazenados no vetor\n" +
+        "8. Verificar se dois números somam um valor específico\n" +
+        "0. Sair\n");
+
+        comando = leitor.nextInt();
 
             switch (comando) {
                 case 1:
-                if(voltas>0){
                     System.out.println("Você ja inicializou o vetor, tente fazer alguma operação.");
-                }
                 break;
                 case 2:
                     System.out.println("Imprimindo vetor ...");
@@ -217,7 +218,7 @@ public class Main {
             perc_imp++;
             }
          }
-         return (perc_imp/vetor.length)*100;
+         return perc_imp*100/vetor.length;
        }
 
        public static int function7(int[] vetor){
