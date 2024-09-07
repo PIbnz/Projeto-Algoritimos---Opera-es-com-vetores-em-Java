@@ -29,7 +29,9 @@ public class Projeto {
         
 
         System.out.printf(
-        "Bem vindo ao sistema de operação com vetores\n"+
+        "**************************************************\n"+
+        "***Bem vindo ao sistema de operação com vetores***\n"+
+        "**************************************************\n"+
         "Escolha uma opção:\n" +
         "1. Inicializar o vetor com números aleatórios\n" +
         "2. Imprimir o vetor\n" +
@@ -43,7 +45,7 @@ public class Projeto {
 
             
             do {
-                System.out.println("Por favor escolha a primeira função para assim poder utilizar as proximas");
+                System.out.println("**Por favor escolha a primeira função para assim poder utilizar as proximas**");
                 comando = leitor.nextInt();
             }while (comando!=1);
 
@@ -142,7 +144,11 @@ public class Projeto {
                     System.out.println("Existe dois numeros que somam esse valor : " + function8(vetor, valor));
                     break;
                 case 0:
-                    System.out.println("Saindo do programa");
+                    System.out.printf(
+                        "**************************************************\n"+
+                        "Saindo do programa\n"+
+                        "**************************************************\n"
+                    );
                     break;
                 default:
                     System.out.println("Erro, voltando para o menu");
