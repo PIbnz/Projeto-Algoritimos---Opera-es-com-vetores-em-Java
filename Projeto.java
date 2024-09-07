@@ -202,17 +202,15 @@ public class Projeto {
     public static int function5(int[]vetor){
 
         int par = 0;
-        int c = 0;
+        int cont = 0;
 
         for(int i = 0; i < vetor.length; i++){
             if(vetor[i] % 2 == 0){
-
-                par++;
-            }
-            c = par + c;
-            
+                par += vetor[i];
+                cont++;
+            } 
         }
-        return c;
+        return par/cont;
         
     }
 
