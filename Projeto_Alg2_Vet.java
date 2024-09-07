@@ -114,19 +114,18 @@ public class Projeto_Alg2_Vet {
     
                     break;
                 case 6:
-    
+                    System.out.println("O percentual de numeros impares armazenado no vetor é : " + function6(vetor) + "%");
                     break;
                 case 7:
-    
+                    System.out.println("A media centralizada do vetor é : " + function7(vetor));
                     break;
                 case 8:
-    
+                    System.out.println("Informe o valor da pesquisa");
+                    int valor = leitor.nextInt();
+                    System.out.println("Existe dois numeros que somam esse valor : " + function8(vetor, valor));
                     break;
-                case 9:
-    
-                    break;
-                case 10:
-    
+                case 0:
+                    System.out.println("Saindo do programa");
                     break;
                 default:
                     System.out.println("Erro, voltando para o menu");
@@ -141,9 +140,8 @@ public class Projeto_Alg2_Vet {
 
        
        public static void function2(int[]vetor){
-
+        System.out.println();
         for(int i = 0; i < vetor.length; i++){
-            System.out.println();
             System.out.print(vetor[i] + " ");
 
         }
@@ -154,5 +152,60 @@ public class Projeto_Alg2_Vet {
 
 
         
+       }
+
+       public static int function6(int[] vetor){
+        int perc_imp = 0;
+
+        for(int i = 0; i<vetor.length;i++){
+            if(vetor[i]%2 != 0){
+            perc_imp++;
+            }
+         }
+         return (perc_imp/vetor.length)*100;
+       }
+
+       public static int function7(int[] vetor){
+
+        int maiorN = 0;
+        int menorN = 9999;
+        int maiorNpos = 0;
+        int menorNpos = 0;
+        int media_centralizada = 0;
+
+        for(int i = 0;i<vetor.length;i++){
+            if(vetor[i]>maiorN){
+                maiorN = vetor[i];
+                maiorNpos = i;
+            }
+            if(vetor[i]<menorN){
+                menorN = vetor[i];
+                menorNpos = i;
+            }
+        }
+
+        vetor[maiorNpos] = 0;
+        vetor[menorNpos] = 0;
+
+        for(int j = 0;j<vetor.length;j++){
+            media_centralizada += vetor[j];
+        }
+
+        return media_centralizada/(vetor.length-2);
+    }
+
+
+       public static boolean function8(int[] vetor, int valor){
+        boolean existe = false;
+
+        for(int i = 0;i<vetor.length;i++){
+            for(int j = 0; j < vetor.length;j++){
+                if(vetor[i] + vetor[j] == valor && i!=j){
+                existe = true;
+                }
+            }
+        }
+
+        return existe;
        }
 }
