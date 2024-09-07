@@ -18,15 +18,16 @@ não realizamos quaisquer outras atividades desonestas para nos beneficiar ou pr
 import java.util.Random;
 import java.util.Scanner;
 
-public class Projeto_Alg2_Vet {
+public class Main {
     public static void main(String[] args) {
         Random random = new Random();
         Scanner leitor = new Scanner(System.in);
-        
+
         int comando = 0;
         int voltas = 0;
         int n = 0;
         int m = 0;
+        
 
         do{
 
@@ -52,7 +53,7 @@ public class Projeto_Alg2_Vet {
                 comando = leitor.nextInt();
             }
 
-            
+
             if(comando == 1 && voltas == 0){
 
                 System.out.println("Qual tamanho deseja para no seu vetor ?");
@@ -82,14 +83,14 @@ public class Projeto_Alg2_Vet {
                 }
 
                 }while (m<0);
-                    
+
                 voltas++;
             }
 
             int[] vetor = new int[n];
 
             for(int i = 0; i < vetor.length; i++){
-    
+
             vetor[i] = random.nextInt(m);
 
             }
@@ -97,7 +98,7 @@ public class Projeto_Alg2_Vet {
             switch (comando) {
                 case 1:
                 if(voltas>0){
-                    System.out.println("Você ja inicializou o vetor, tente fazzer alguma operação.");
+                    System.out.println("Você ja inicializou o vetor, tente fazer alguma operação.");
                 }
                 break;
                 case 2:
@@ -105,13 +106,28 @@ public class Projeto_Alg2_Vet {
                     function2(vetor);
                     break;
                 case 3:
+                    System.out.println("Qual numero deseja procurar no vetor?");
+                    int numero = leitor.nextInt();
+                 ;
+                    if(function3(vetor, numero) == -1){
+
+                         System.out.println(numero + " não está no vetor");
+          
+                    }
+                    else{
+                          System.out.println("O numero " + numero + " está na posição: " + function3(vetor, numero));
+                   
+                        
+                    }
                     
                     break;
                 case 4:
-                    
+                    System.out.println("O maior numero no vetor é: " + function4(vetor));
+
                     break;
                 case 5:
-    
+                    System.out.println("A média dos números pares é: " + function5(vetor));
+
                     break;
                 case 6:
                     System.out.println("O percentual de numeros impares armazenado no vetor é : " + function6(vetor) + "%");
@@ -129,16 +145,16 @@ public class Projeto_Alg2_Vet {
                     break;
                 default:
                     System.out.println("Erro, voltando para o menu");
-                    
+
                     break;
             }
          }while(comando!=0);
 
          leitor.close();
     }
-    
 
-       
+
+
        public static void function2(int[]vetor){
         System.out.println();
         for(int i = 0; i < vetor.length; i++){
@@ -148,11 +164,50 @@ public class Projeto_Alg2_Vet {
         System.out.println();
        } 
 
-       public static void function3(){
+       public static int function3(int[]vetor,int num){
 
-
-        
+        for(int i = 0; i < vetor.length; i++){
+            if(vetor[i] == num){
+                
+                return i;
+                
+            }
+        }
+        return -1;
+           
        }
+
+    public static int function4(int[]vetor){
+
+        int maior = 0;
+    
+    for(int i = 0; i < vetor.length; i++){
+        if(vetor[i] > maior){
+
+            maior = vetor[i];
+            
+        }
+    }
+        return maior;
+        
+    }
+
+    public static int function5(int[]vetor){
+
+        int par = 0;
+        int c = 0;
+
+        for(int i = 0; i < vetor.length; i++){
+            if(vetor[i] % 2 == 0){
+
+                par++;
+            }
+            c = par + c;
+            
+        }
+        return c;
+        
+    }
 
        public static int function6(int[] vetor){
         int perc_imp = 0;
