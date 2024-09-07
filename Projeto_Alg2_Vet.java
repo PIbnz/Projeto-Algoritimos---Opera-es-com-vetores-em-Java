@@ -18,7 +18,7 @@ não realizamos quaisquer outras atividades desonestas para nos beneficiar ou pr
 import java.util.Random;
 import java.util.Scanner;
 
-public class Main {
+public class Projeto_Alg2_Vet {
     public static void main(String[] args) {
         Random random = new Random();
         Scanner leitor = new Scanner(System.in);
@@ -32,7 +32,9 @@ public class Main {
         do{
 
         System.out.printf(
-        "Bem vindo ao sistema de operação com vetores\n"+
+        "**************************************************\n"+
+        "***Bem vindo ao sistema de operação com vetores***\n"+
+        "**************************************************\n"+
         "Escolha uma opção:\n" +
         "1. Inicializar o vetor com números aleatórios\n" +
         "2. Imprimir o vetor\n" +
@@ -46,7 +48,7 @@ public class Main {
 
             if(voltas == 0){
             do {
-                System.out.println("Por favor escolha a primeira função para assim poder utilizar as proximas");
+                System.out.println("**Por favor escolha a primeira função para assim poder utilizar as proximas**");
                 comando = leitor.nextInt();
             }while (comando!=1);
             }else{
@@ -141,7 +143,11 @@ public class Main {
                     System.out.println("Existe dois numeros que somam esse valor : " + function8(vetor, valor));
                     break;
                 case 0:
-                    System.out.println("Saindo do programa");
+                    System.out.printf(
+                        "**************************************************\n"+
+                        "Saindo do programa\n"+
+                        "**************************************************\n"
+                    );
                     break;
                 default:
                     System.out.println("Erro, voltando para o menu");
