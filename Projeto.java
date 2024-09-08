@@ -86,7 +86,9 @@ public class Projeto {
             do{
 
                 System.out.printf(
-        "Bem vindo ao sistema de operação com vetores\n"+
+        "**************************************************\n"+
+        "***Bem vindo ao sistema de operação com vetores***\n"+
+        "**************************************************\n"+
         "Escolha uma opção:\n" +
         "1. Inicializar o vetor com números aleatórios\n" +
         "2. Imprimir o vetor\n" +
